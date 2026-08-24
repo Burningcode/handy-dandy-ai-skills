@@ -1,31 +1,42 @@
-# Handy Dandy Cursor Skills
+# Handy Dandy Agent Skills
 
-Reusable Cursor skills that can be installed by copying a skill folder into `~/.cursor/skills/`.
+Public-safe, reusable skills for product leadership and operational workflows. Each skill is written to make decision boundaries, verification, and private configuration explicit.
 
-## Install A Skill
+## Install a skill
+
+Copy a skill folder into the skills directory used by your agent or editor. For Cursor:
 
 ```bash
 mkdir -p ~/.cursor/skills
-cp -R skills/creator-gifting-address-lookup ~/.cursor/skills/
+cp -R skills/<skill-name> ~/.cursor/skills/
 ```
 
-Then reload Cursor.
+Then reload the application.
 
-## Included Skills
+## Included skills
 
 | Skill | What it does |
 | --- | --- |
-| `creator-gifting-address-lookup` | Pulls creator names and gifting addresses for accepted campaign creators, generates a fresh Google Sheet, and drafts a Slack handoff. |
+| [`agentic-product-documentation`](skills/agentic-product-documentation/SKILL.md) | Turns messy product context into an executive-ready brief or decision-ready PRD, with explicit evidence, risks, metrics, evaluation, rollout, and agent-specific quality boundaries. |
+| [`creator-gifting-address-lookup`](skills/creator-gifting-address-lookup/SKILL.md) | Pulls creator names and gifting addresses for accepted campaign creators, generates a fresh Google Sheet, and drafts a verified handoff. |
 
-## Private Configuration
+The product-documentation skill also includes a [copy/paste prompt](prompts/build-a-decision-ready-prd.md) for tools that do not support skills.
 
-The gifting lookup skill is public-safe. It intentionally does not include private company table names, Slack channel IDs, campaign IDs, or example creator data.
+## Public-safety principles
 
-To use it inside a company environment, copy:
+- Keep employer-specific systems, table names, channel IDs, customer data, credentials, and private examples in ignored local configuration.
+- Separate source facts, inferences, recommendations, and open questions.
+- Require explicit authorization before external writes, messages, releases, or irreversible actions.
+- Read back and verify created artifacts rather than trusting a success message alone.
+
+## Private configuration
+
+The gifting lookup skill intentionally excludes company table names, Slack channel IDs, campaign IDs, and creator data. To use it in a company environment, copy its example configuration:
 
 ```bash
 cp skills/creator-gifting-address-lookup/internal-config.example.md \
   skills/creator-gifting-address-lookup/internal-config.md
 ```
 
-Fill in the local `internal-config.md` with your private MCP server names, table names, Slack channels, and Google auth details. Do not commit that file.
+Fill in `internal-config.md` locally and do not commit it.
+
