@@ -2,7 +2,38 @@
 
 Public-safe, reusable skills for product leadership and operational workflows. Each skill is written to make decision boundaries, verification, and private configuration explicit.
 
-## Install a skill
+## Install with the Skills CLI
+
+The repository is a discoverable skills package. List all available skills without installing them:
+
+```bash
+npx skills add Burningcode/handy-dandy-ai-skills --list
+```
+
+Install one skill globally for compatible agents, including Codex:
+
+```bash
+npx skills add Burningcode/handy-dandy-ai-skills \
+  --skill engineering-delivery-team \
+  --global \
+  --yes
+```
+
+Install every skill for every supported agent:
+
+```bash
+npx skills add Burningcode/handy-dandy-ai-skills --all
+```
+
+Generate a prompt from one skill without installing it:
+
+```bash
+npx skills use Burningcode/handy-dandy-ai-skills@working-backwards-prfaq
+```
+
+Reload the target agent after installation. Each skill remains independently selectable through `owner/repo@skill-name`.
+
+## Manual installation
 
 Copy a skill folder into the skills directory used by your agent or editor. For Cursor:
 
@@ -12,6 +43,14 @@ cp -R skills/<skill-name> ~/.cursor/skills/
 ```
 
 Then reload the application.
+
+## Package contract
+
+- Put every distributable skill under `skills/<skill-name>/SKILL.md`.
+- Set the frontmatter `name` to the exact folder name and provide a concise `description`.
+- Keep supporting scripts, references, examples, and assets inside that skill folder.
+- Do not add a repository-root `SKILL.md`; the Skills CLI must discover the individual folders.
+- Run `node scripts/validate-skills.mjs` before pushing. GitHub Actions runs the same validation on pushes and pull requests.
 
 The `engineering-delivery-team` skill also includes six Codex persona configurations and a PowerShell installer. Install the complete team into a project with:
 
