@@ -26,6 +26,9 @@ Then reload the application.
 | [`outcome-goal-metric-design`](skills/outcome-goal-metric-design/SKILL.md) | Outcome design | Connects a shared objective to behavior change, causal assumptions, metric contracts, thresholds, guardrails, and explicit review decisions. |
 | [`product-principles-decision-review`](skills/product-principles-decision-review/SKILL.md) | Leadership system | Turns product principles into observable rules for resolving recurring trade-offs, including boundaries, counterexamples, and conflict review. |
 | [`product-process-improvement`](skills/product-process-improvement/SKILL.md) | Operating model | Maps actual demand-to-outcome flow, diagnoses waits and rework, and designs a reversible one-cycle process experiment with user-outcome guardrails. |
+| [`market-and-gtm-strategy`](skills/market-and-gtm-strategy/SKILL.md) | Market and growth strategy | Connects decision-driven market research, segment selection, positioning, pricing, route to market, staged launch, and commercial learning into one evidence-backed operating contract. |
+| [`competitive-product-teardown`](skills/competitive-product-teardown/SKILL.md) | Competitive strategy | Compares the same customer job across products, journeys, positioning, pricing, GTM, and strategic systems, then turns observed differences into choices and tests. |
+| [`collaborative-product-critic`](skills/collaborative-product-critic/SKILL.md) | Executive product coaching | Steelmans an idea, probes the highest-value assumption, applies product, strategy, system, commercial, and agentic lenses, and converts critique into stronger options and a bounded learning decision. |
 | [`executive-decision-brief`](skills/executive-decision-brief/SKILL.md) | Executive decision example | Frames an outcome, challenges a foundational assumption, compares viable options across four product risks, and ends with a clear recommendation and decision gate. |
 | [`product-discovery-coach`](skills/product-discovery-coach/SKILL.md) | Product discovery example | Operates as both builder and coach: diagnoses weak opportunity framing, gathers evidence, tests assumptions, and produces an outcome-oriented discovery brief. |
 | [`next-gen-product-analytics`](skills/next-gen-product-analytics/SKILL.md) | AI product analytics | Connects agent experience, tool execution, authoritative state, evaluations, durable outcomes, and business value into decision-ready measurement systems. |
@@ -63,3 +66,4 @@ cp skills/creator-gifting-address-lookup/internal-config.example.md \
 ```
 
 Fill in `internal-config.md` locally and do not commit it.
+
