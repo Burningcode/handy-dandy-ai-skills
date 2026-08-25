@@ -1,63 +1,72 @@
-# Creator Gifting Address Lookup — Internal Config
+# Example configuration — Athena-backed gifting lookup
 
-Copy this file to `internal-config.md` and fill it in locally. Do not commit real internal values.
+This file is intentionally non-functional. Copy it to `internal-config.md`, replace every placeholder using an approved environment, and keep the completed file out of version control.
 
-## MCP Servers
+## Execution mode
 
-- Slack MCP server: `<slack-mcp-server-name>`
-- Google Workspace MCP server: `<google-workspace-mcp-server-name>`
-- Athena / warehouse MCP server: `<warehouse-mcp-server-name>`
+- Mode: `<demonstration | dry-run | live>`
+- Configuration owner: `<team or role>`
+- Configuration version / reviewed date: `<value>`
 
-## Slack
+## MCP connectors
 
-- Request channel name: `<channel-name>`
-- Request channel ID: `<channel-id>`
-- Default requester / responder notes: `<optional>`
+- Google Sheets MCP server: `<server-name>`
+- Spreadsheet metadata/read tool: `<tool-name>`
+- Spreadsheet create/write/read-back tools: `<tool-names>`
+- Athena MCP server: `<server-name>`
+- Athena start-query tool: `<tool-name>`
+- Athena query-status tool: `<tool-name>`
+- Athena results tool: `<tool-name>`
+- Athena cancel tool: `<optional-tool-name>`
 
-## Google Workspace
+## Athena query context
 
-- Sheets read tool: `<tool-name>`
-- Drive upload/import path available: `yes/no`
-- Local auth command if Drive scope is needed: `<command>`
+- AWS region: `<region>`
+- Workgroup: `<read-only-workgroup>`
+- Catalog: `<catalog>`
+- Database: `<database>`
+- Query results location: `<approved-managed-location>`
+- Maximum bytes scanned or cost guardrail: `<value>`
+- Poll timeout and stopping rule: `<value>`
+- Maximum identifiers per query chunk: `<value>`
 
-## Warehouse Tables
+## Authorized schema mapping
 
-Use your internal table names here.
-
-- Current campaign/collaboration table: `<database.schema.campaign_collaboration_table>`
-- Creator address profile table: `<database.schema.creator_address_profile_table>`
-- Primary creator name table: `<database.schema.creator_name_table>`
-- Fallback contact/name table: `<database.schema.fallback_contact_table>`
-
-## Required Columns
-
-Source sheet:
-
-- Campaign ID column: `<header>`
-- Creator ID column: `<header>`
-- Creator handle column: `<header>`
-- Campaign title column: `<header>`
-- State column: `<header>`
-- Accepted flag column: `<header>`
-
-Warehouse:
-
-- Campaign ID field: `<field>`
+- Creator profile table: `<catalog.database.table>`
 - Creator ID field: `<field>`
-- Collaboration state field: `<field>`
-- Gifting address field: `<field>`
-- Gifting address unit field: `<field>`
 - First name field: `<field>`
 - Last name field: `<field>`
+- Gifting address field: `<field>`
+- Gifting address unit field: `<field>`
+- Source updated-at field: `<field>`
 
-## State Mapping
+Do not add unrelated personal, financial, authentication, or behavioral fields.
 
-- Accepted source-sheet state: `<value>`
-- Accepted source-sheet flag: `<value>`
-- Accepted collaboration warehouse states: `<values>`
+## Source spreadsheet mapping
 
-## Sharing Defaults
+- Worklist / campaign header: `<header>`
+- Creator ID header: `<header>`
+- Creator handle header: `<header>`
+- State header: `<header>`
+- Accepted flag header: `<header>`
+- Eligible state / flag values: `<values>`
 
-- Share generated Sheet with requester as: `writer/commenter/viewer`
-- Share generated Sheet with cc users as: `writer/commenter/viewer`
-- Send Slack message automatically: `yes/no`
+## Output controls
+
+- Authorized destination folder: `<folder>`
+- Authorized recipients: `<people or groups>`
+- Default access role: `<viewer | commenter | writer>`
+- Retention period: `<value>`
+- Deletion owner / process: `<value>`
+- External sharing allowed: `<yes | no>`
+- Message sending allowed without separate approval: `no`
+
+## Privacy and security controls
+
+- Data classification: `<classification>`
+- Identity / role used by Athena MCP: `<approved role name, never credentials>`
+- Required query tags or audit metadata: `<values>`
+- Prohibited fields: `<values>`
+- Prohibited destinations: `<values>`
+- Incident / escalation owner: `<role>`
+
