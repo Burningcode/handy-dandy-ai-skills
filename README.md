@@ -13,10 +13,19 @@ cp -R skills/<skill-name> ~/.cursor/skills/
 
 Then reload the application.
 
+The `engineering-delivery-team` skill also includes six Codex persona configurations and a PowerShell installer. Install the complete team into a project with:
+
+```powershell
+.\skills\engineering-delivery-team\scripts\Install-EngineeringDeliveryTeam.ps1 -TargetProject 'C:\work\your-project'
+```
+
+Use `-Personal` instead to install under `CODEX_HOME`, or under `~/.codex` when `CODEX_HOME` is unset.
+
 ## Included skills
 
 | Skill | Category | What it demonstrates |
 | --- | --- | --- |
+| [`engineering-delivery-team`](skills/engineering-delivery-team/SKILL.md) | Engineering delivery | Risk-sizes work across a Coordinator, read-only Explorer, Staff Engineer, SRE, Senior Tester, and post-finalization Code Documenter using versioned task packets, exclusive file ownership, compatibility/resource contracts, and independent evidence gates. |
 | [`working-backwards-prfaq`](skills/working-backwards-prfaq/SKILL.md) | Product strategy | Creates, critiques, or reverse-engineers decision-ready PRFAQs while separating evidence from assumptions and sanitizing private references into fictional composites. |
 | [`agentic-product-documentation`](skills/agentic-product-documentation/SKILL.md) | Product delivery | Turns messy product context into an executive-ready brief or decision-ready PRD, with explicit evidence, risks, metrics, evaluation, rollout, and agent-specific quality boundaries. |
 | [`probe-product-analysis`](skills/probe-product-analysis/SKILL.md) | Product analysis | Applies Purpose, Reality, Obstacles, Bets, and Experiments as an evidence-backed loop, producing both a decision analysis and a one-page decision canvas. |
@@ -66,4 +75,3 @@ cp skills/creator-gifting-address-lookup/internal-config.example.md \
 ```
 
 Fill in `internal-config.md` locally and do not commit it.
-
