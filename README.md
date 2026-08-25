@@ -19,6 +19,7 @@ Then reload the application.
 | --- | --- | --- |
 | [`working-backwards-prfaq`](skills/working-backwards-prfaq/SKILL.md) | Product strategy | Creates, critiques, or reverse-engineers decision-ready PRFAQs while separating evidence from assumptions and sanitizing private references into fictional composites. |
 | [`agentic-product-documentation`](skills/agentic-product-documentation/SKILL.md) | Product delivery | Turns messy product context into an executive-ready brief or decision-ready PRD, with explicit evidence, risks, metrics, evaluation, rollout, and agent-specific quality boundaries. |
+| [`probe-product-analysis`](skills/probe-product-analysis/SKILL.md) | Product analysis | Applies Purpose, Reality, Obstacles, Bets, and Experiments as an evidence-backed loop, producing both a decision analysis and a one-page decision canvas. |
 | [`executive-decision-brief`](skills/executive-decision-brief/SKILL.md) | Executive decision example | Frames an outcome, challenges a foundational assumption, compares viable options across four product risks, and ends with a clear recommendation and decision gate. |
 | [`product-discovery-coach`](skills/product-discovery-coach/SKILL.md) | Product discovery example | Operates as both builder and coach: diagnoses weak opportunity framing, gathers evidence, tests assumptions, and produces an outcome-oriented discovery brief. |
 | [`next-gen-product-analytics`](skills/next-gen-product-analytics/SKILL.md) | AI product analytics | Connects agent experience, tool execution, authoritative state, evaluations, durable outcomes, and business value into decision-ready measurement systems. |
@@ -56,4 +57,3 @@ cp skills/creator-gifting-address-lookup/internal-config.example.md \
 ```
 
 Fill in `internal-config.md` locally and do not commit it.
-
