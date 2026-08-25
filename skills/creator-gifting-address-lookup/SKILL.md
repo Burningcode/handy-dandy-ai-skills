@@ -1,202 +1,193 @@
 ---
 name: creator-gifting-address-lookup
-description: Pull creator names and gifting addresses for accepted non-Shopify gifting campaigns from a Google Sheet and warehouse tables. Use when a Slack or chat request shares a creator list spreadsheet and asks for gifting addresses, shipping addresses, or a creator address lookup.
+description: Example operational automation that enriches a requester-supplied creator gifting worklist through a read-only Amazon Athena MCP connector, preserves the source population, creates a reviewable output, and drafts a handoff. Use to demonstrate or adapt an Athena-backed MCP workflow; it is not a turnkey production integration.
 ---
 
-# Creator Gifting Address Lookup
+# Example: Athena-backed Creator Gifting Address Lookup
 
-Creates a fresh Google Sheet containing every row and column from a requester-provided source sheet, plus appended lookup columns for creator name, gifting address, address status, source, and notes. Drafts a Slack handoff in the original request thread.
+This skill is a public portfolio example of a bounded operational automation. It demonstrates how an agent can coordinate a source spreadsheet, a read-only Amazon Athena MCP connector, deterministic reconciliation, and a verified handoff.
 
-## Private Config
+It does **not** contain a real organization's tools, table names, schemas, channels, campaign identifiers, creator records, permissions, or credentials. The SQL and configuration are placeholders. Adapt them to an authorized environment and its privacy, security, and retention policies before use.
 
-Before running, look for `internal-config.md` in this skill directory. If it is missing, ask the user for the private values or have them copy `internal-config.example.md` to `internal-config.md`.
+## What the example demonstrates
 
-Never commit real company table names, Slack IDs, source Sheet links, campaign IDs, creator data, or access tokens to a public repo.
+```text
+Requester-supplied worklist
+        ↓
+Google Sheets MCP: read and validate population
+        ↓
+Athena MCP: execute approved read-only enrichment queries
+        ↓
+Deterministic merge: preserve rows, surface duplicates and missingness
+        ↓
+Google Sheets MCP: create a fresh review artifact and read it back
+        ↓
+Drafted handoff: send or share only after explicit authorization
+```
 
-## Inputs
+The source worklist defines who is in scope. Athena provides authorized enrichment data. The generated sheet is a review artifact, not a new system of record.
 
-Capture:
+## Example versus production
 
-- Slack request channel and parent thread timestamp, if the request came from Slack.
-- Requester user ID and cc user IDs.
-- Google Sheet URL or spreadsheet ID.
-- Linked tab/gid and actual tab title from sheet metadata.
-- Source sheet headers and full row count.
+Use this skill to inspect, discuss, prototype, or adapt the operating pattern. Before a production run, provide an environment-specific configuration derived from [the example configuration](internal-config.example.md) and confirm:
+
+- The requester is authorized to access the source and requested fields.
+- The Athena MCP connector uses approved identity, region, catalog, database, workgroup, and output controls.
+- Queries are read-only and limited to the supplied population.
+- The destination, recipients, retention period, and deletion process are approved.
+- External sharing, permissions, and messages require separate action-time authorization.
+
+Do not query real personal information merely to demonstrate the example.
+
+## Bounded job
+
+The automation may:
+
+- Read the user-supplied worklist and its metadata.
+- Validate headers, row counts, identifiers, accepted-state filters, and duplicates.
+- Use the configured Athena MCP connector to execute approved `SELECT` queries.
+- Poll query state, retrieve all result pages, and record query identifiers and provenance.
+- Reconcile results to the exact source rows.
+- Create and verify a new review artifact.
+- Draft a concise handoff.
+
+It may not:
+
+- Add creators who are absent from the source worklist.
+- Guess missing names, addresses, or identity matches.
+- Update Athena-backed data, source systems, or the original worklist.
+- Broaden queries to unrelated populations.
+- Share files, change permissions, or send messages without explicit authorization.
+
+## Required inputs
+
+- Source spreadsheet and tab.
+- Header mapping for creator identifier, campaign or worklist identifier, handle, state, and accepted flag.
+- Athena MCP server and tool names.
+- Approved catalog, database, workgroup, output location, tables, and fields.
+- Authorized output fields and data classification.
+- Output destination, recipients, and retention expectation.
+
+If the configuration is missing or still contains placeholders, remain in demonstration mode. Do not attempt a live query.
+
+## MCP connector contract
+
+The Athena connector should expose the equivalent of:
+
+1. `start_query_execution` — submit a read-only query with the configured workgroup and query context.
+2. `get_query_execution` — poll until `SUCCEEDED`, `FAILED`, or `CANCELLED`.
+3. `get_query_results` — retrieve every result page using the returned pagination token.
+4. Optional `stop_query_execution` — cancel a runaway or no-longer-authorized query.
+
+Tool names may differ. Discover the configured MCP tools rather than inventing them. Never print credentials or connector secrets.
+
+Record query ID, state, scanned-data metadata when available, result-page count, and the configuration version used. Stop on failure or cancellation; do not silently return partial data.
 
 ## Workflow
 
-1. Search Slack for the Sheet URL if only the Sheet URL was provided.
-2. Read the request thread for context and cc users.
-3. Read Google Sheet metadata to confirm the actual tab title and row/column count.
-4. Pull the full source range. Preserve every original source column and row.
-5. Parse by header names, not hardcoded column indices.
-6. Validate the source population:
-   - accepted row count
-   - unique creator ID count
-   - duplicate creator ID count
-   - campaign ID/title counts
-7. Query the warehouse for gifting addresses and primary names.
-8. Query fallback contact/name data only for creator IDs missing a primary name.
-9. Merge lookup data back onto the source sheet rows.
-10. Generate a CSV/JSON payload with original columns plus appended lookup columns.
-11. Create a fresh native Google Sheet from the generated CSV.
-12. Share the Sheet with requester and cc users.
-13. Re-read the generated Sheet to verify row count, original columns, and appended lookup columns.
-14. Draft the Slack reply. Send only when explicitly asked.
+1. **Ground authority and scope.** Confirm the requested fields, source population, authorized destination, and whether the user wants a demonstration, dry run, or live execution.
+2. **Read the full source.** Use spreadsheet metadata and bounded ranges. Preserve every original column and row.
+3. **Validate the population.** Report total rows, eligible rows, unique creator identifiers, blank identifiers, duplicates, campaign or worklist counts, and excluded states.
+4. **Preview the query plan.** Show the Athena catalog/database, logical tables, selected fields, population bound, and expected output without exposing credentials or real sensitive values.
+5. **Run a coverage query.** Verify the eligible population and duplication behavior before retrieving personal fields.
+6. **Run the enrichment query.** Query only the supplied identifiers, split large populations into bounded chunks, poll execution, and retrieve all result pages.
+7. **Reconcile deterministically.** Join by the configured stable identifier. Preserve source row order and duplicate source rows. Flag one-to-many matches, missing values, and conflicting values.
+8. **Create a fresh review artifact.** Append lookup status, provenance, notes, and query timestamp after the original columns.
+9. **Read back and verify.** Confirm row count, column preservation, appended fields, missing/ambiguous flags, and output metadata.
+10. **Draft the handoff.** Summarize coverage and exceptions. Share or send only after explicit authorization.
 
-## Source Sheet Rules
+## Illustrative Athena query pattern
 
-Use the source sheet as the source of truth. If the warehouse contains additional active creators for the same campaign IDs, do not add them unless the user asks.
-
-Use header names from config, commonly:
-
-- campaign ID
-- creator/influencer ID
-- creator handle / shop name
-- campaign title
-- state
-- accepted flag
-
-Only include rows that match the configured accepted state/flag.
-
-## Warehouse Query Pattern
-
-For current campaign systems, validate the campaign population before joining addresses:
+Use placeholders and the authorized environment's actual schema. Prefer parameterization when the connector supports it. Otherwise validate and quote identifiers as data, never as SQL syntax.
 
 ```sql
-SELECT state,
-       COUNT(*) AS rows,
-       COUNT(DISTINCT <creator_id_field>) AS unique_creators
-FROM <campaign_collaboration_table>
-WHERE <campaign_id_field> IN (<campaign_ids>)
-GROUP BY state
-ORDER BY state;
-```
-
-For large creator populations, split the query into modulo chunks to avoid row limits:
-
-```sql
-WITH accepted AS (
-  SELECT DISTINCT CAST(<creator_id_field> AS VARCHAR) AS creator_id
-  FROM <campaign_collaboration_table>
-  WHERE <campaign_id_field> IN (<campaign_ids>)
-    AND <state_field> IN (<accepted_states>)
-    AND mod(<creator_id_field>, 4) = <0_to_3>
+WITH source_ids (creator_id) AS (
+  VALUES
+    (CAST(? AS VARCHAR)),
+    (CAST(? AS VARCHAR))
+),
+candidate_records AS (
+  SELECT
+    CAST(p.<creator_id_field> AS VARCHAR) AS creator_id,
+    p.<first_name_field> AS first_name,
+    p.<last_name_field> AS last_name,
+    p.<gifting_address_field> AS gifting_address,
+    p.<gifting_address_unit_field> AS gifting_address_unit,
+    p.<updated_at_field> AS source_updated_at
+  FROM <catalog>.<database>.<authorized_creator_profile_table> p
+  JOIN source_ids s
+    ON CAST(p.<creator_id_field> AS VARCHAR) = s.creator_id
 )
-SELECT a.creator_id,
-       addr.<gifting_address_field> AS gifting_address,
-       addr.<gifting_address_unit_field> AS gifting_address_unit,
-       names.<first_name_field> AS first_name,
-       names.<last_name_field> AS last_name
-FROM accepted a
-LEFT JOIN <creator_address_profile_table> addr
-  ON CAST(addr.<creator_id_field> AS VARCHAR) = a.creator_id
-LEFT JOIN <creator_name_table> names
-  ON CAST(names.<creator_id_field> AS VARCHAR) = a.creator_id
-ORDER BY a.creator_id;
+SELECT *
+FROM candidate_records
+ORDER BY creator_id, source_updated_at DESC;
 ```
 
-For smaller lists, it is fine to query by explicit source-sheet creator IDs.
+The `?` values represent positional execution parameters when the Athena MCP connector supports them. Otherwise, construct the `VALUES` rows from strictly validated data values using the connector's approved escaping method. For large lists, use configured chunk sizes or a temporary authorized input mechanism. Do not scan a full personal-data table when a bounded identifier lookup can perform the job.
 
-## Fallback Names
+## Output fields
 
-Only query fallback contact data for creator IDs missing both first and last name from the primary source.
-
-```sql
-SELECT CAST(<fallback_creator_id_field> AS VARCHAR) AS creator_id,
-       <fallback_first_name_field> AS first_name,
-       <fallback_last_name_field> AS last_name
-FROM <fallback_contact_table>
-WHERE CAST(<fallback_creator_id_field> AS VARCHAR) IN (<missing_name_ids>);
-```
-
-Name priority:
-
-1. Primary creator name table.
-2. Fallback contact table when the candidate clearly matches the handle or there is one complete candidate.
-3. Leave ambiguous values flagged in notes.
-
-Do not treat multiple fallback contacts as certain. If ambiguous, add `Fallback returned multiple candidates; verify name against creator profile`.
-
-## Output Columns
-
-Append these columns after all original source columns:
+After every original source column, append:
 
 - `Lookup First Name`
 - `Lookup Last Name`
 - `Gifting Address`
 - `Gifting Address Unit`
-- `Address Found`
-- `Lookup Name Source`
+- `Address Status`
+- `Lookup Source`
 - `Lookup Notes`
-- `Duplicate Accepted Rows`
+- `Source Match Count`
+- `Athena Query ID`
 - `Lookup Pulled At`
 
-Use `Address Found = Y` when either address or unit has content. Use `N` otherwise.
+Use statuses such as `FOUND`, `MISSING`, `AMBIGUOUS`, and `REVIEW_REQUIRED`. Never convert missingness into a guessed value.
 
-Recommended notes:
+## Synthetic example
 
-- `NEEDS MANUAL COLLECTION - no gifting address on file`
-- `Address stored in unit field only - verify before shipping`
-- `Name from fallback contact source`
-- `Fallback returned multiple candidates; verify name against creator profile`
-- `Creator appears in N accepted source rows`
+Input:
 
-## Fresh Google Sheet Creation
+| Worklist | Creator ID | Handle | Accepted |
+| --- | --- | --- | --- |
+| DEMO-01 | EX-1001 | example_one | Y |
+| DEMO-01 | EX-1002 | example_two | Y |
 
-If the available Google Sheets tool can write ranges, create a new spreadsheet and write the full payload.
+Expected behavior:
 
-If Sheets write tools are unavailable but Drive upload is available, generate a CSV and import it as a native Google Sheet:
+- Query only `EX-1001` and `EX-1002` through the configured Athena MCP connector.
+- Return a new two-row review artifact.
+- Mark `EX-1001` as `FOUND` if the synthetic fixture has an address.
+- Mark `EX-1002` as `MISSING` if it does not.
+- Do not send, share, ship, or update any source system.
 
-```text
-POST https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart
-metadata.mimeType = application/vnd.google-apps.spreadsheet
-media Content-Type = text/csv
-```
+## Quality floor
 
-If local Google auth lacks Drive scope, ask the user before running a scoped login command such as:
+A run fails if it has a silent row drop, an unbounded query, partial Athena results presented as complete, an unflagged one-to-many match, a guessed personal value, missing provenance, or an external handoff without authorization.
 
-```bash
-gcloud auth login --enable-gdrive-access
-```
-
-Do not print access tokens. Capture tokens in-process only.
-
-Share the created Sheet with requester and cc users using Drive permissions.
-
-## Verification
-
-Before declaring done:
+Before declaring success, verify:
 
 - Output row count equals source row count.
-- Output includes all original source columns.
-- Output includes all appended lookup columns.
-- Generated Google Sheet metadata can be read.
-- A range spanning the last original column and appended columns reads back correctly.
-- Sharing permissions were attempted and the result was recorded.
-- Slack draft uses the fresh Sheet link and does not mention stale blockers.
+- Every original source column remains intact and in order.
+- Eligible unique identifiers equal queried unique identifiers.
+- Athena reports `SUCCEEDED` and every result page was retrieved.
+- Duplicate, missing, ambiguous, and unit-only records are explicit.
+- Query ID and lookup timestamp are present.
+- The created artifact can be read back.
+- Sharing and messaging state are accurately reported.
 
-## Slack Draft Format
-
-Draft in the original request thread unless the user asks to send.
+## Draft handoff
 
 ```text
-Hi <@requester> - got it! Here are the <brand/campaign> creator addresses.
+The Athena-backed enrichment example is ready for review.
 
-**Results:**
-- <found> of <total> unique creator addresses found
-- <missing> unique creators have no gifting address on file and need manual collection
-- <unit_only> unique creators have addresses stored only in the unit field and should be verified before shipping
-- <fallback_names> creator names used fallback; <ambiguous_names> creator names remain ambiguous and are flagged in the notes column
+- Source rows preserved: <rows>
+- Eligible unique IDs queried: <ids>
+- Found: <found>
+- Missing: <missing>
+- Ambiguous / review required: <review>
+- Athena query status: SUCCEEDED (<query_id>)
 
-**Full address data:** <fresh_google_sheet_url>
+Review artifact: <link>
 
-The fresh Sheet includes all original source columns plus the appended lookup columns, and I shared it with you and <@cc_user> as writers.
-
-**<missing> needing manual collection:**
-| Handle | Creator ID | Name |
-|---|---:|---|
-| ... |
-
-For future requests, tag <@owner> and we'll run the lookup.
+No source records were changed. The artifact has not been shared or messaged beyond the currently authorized scope.
 ```
+
