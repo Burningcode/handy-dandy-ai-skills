@@ -64,6 +64,7 @@ Use `-Personal` instead to install under `CODEX_HOME`, or under `~/.codex` when 
 
 | Skill | Category | What it demonstrates |
 | --- | --- | --- |
+| [`job-hunt-automation`](skills/job-hunt-automation/SKILL.md) | Career operations | Guides candidate intake, official-posting verification, tracker deduplication, tailored staging, authorized submission, and evidence-backed reconciliation. |
 | [`engineering-delivery-team`](skills/engineering-delivery-team/SKILL.md) | Engineering delivery | Risk-sizes work across a Coordinator, read-only Explorer, Staff Engineer, SRE, Senior Tester, and post-finalization Code Documenter using versioned task packets, exclusive file ownership, compatibility/resource contracts, and independent evidence gates. |
 | [`working-backwards-prfaq`](skills/working-backwards-prfaq/SKILL.md) | Product strategy | Creates, critiques, or reverse-engineers decision-ready PRFAQs while separating evidence from assumptions and sanitizing private references into fictional composites. |
 | [`agentic-product-documentation`](skills/agentic-product-documentation/SKILL.md) | Product delivery | Turns messy product context into an executive-ready brief or decision-ready PRD, with explicit evidence, risks, metrics, evaluation, rollout, and agent-specific quality boundaries. |
