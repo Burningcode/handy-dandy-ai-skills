@@ -18,6 +18,17 @@ Case Practice Studio creates and evaluates practice cases. Interview & Case Grad
 
 The supplied-context workflows were exercised in Codex with fictional evidence. Connected-service execution, other agent products and autonomous coordination across skills have not been independently validated. Paid source and release archives are maintained privately; purchases are delivered through Agensi.
 
+### New workbenches submitted for review
+
+Two additional standalone packages were submitted on October 13, 2026 and are awaiting Agensi review:
+
+| Workbench | What it produces | One-time price (USD) |
+| --- | --- | ---: |
+| Customer Research Synthesis Workbench | Traceable findings, segment comparisons, contradictory evidence and a next research decision from supplied customer notes | $14.40 |
+| Backlog Readiness Workbench | Ticket readiness assessment, relationship map, complete repair drafts and a focused grooming agenda from supplied exports | $14.40 |
+
+Their fictional supplied-context exercises were completed in Codex. Live services and other agent products were not tested. These packages are not included in the three bundles above. Check the [creator page](https://www.agensi.io/creators/clay-burns) for approval and availability; submission is not a live listing.
+
 ### Athena analytics companion
 
 An Athena MCP connector and setup kit is being evaluated to help buyers use the analytics workflows with their own authorized AWS data. It is not released or included in current purchases. The existing [Athena workflow example](skills/creator-gifting-address-lookup/SKILL.md) demonstrates the pattern with placeholders; it does not ship a production connector.
