@@ -8,8 +8,8 @@ For complete practice packages, visit [C.J. Burns on Agensi](https://www.agensi.
 
 | Group | Bundle | Included workbenches | One-time price (USD) |
 | --- | --- | --- | ---: |
-| Product management | [Product Discovery and Decisions](https://www.agensi.io/bundles/product-discovery-and-decisions) | Working Backwards PRFAQ, Competitive Product Teardown, Executive Decision Brief | $25.74 |
-| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics | $35.10 |
+| Product management | [Product Discovery and Decisions](https://www.agensi.io/bundles/product-discovery-and-decisions) | Working Backwards PRFAQ, Competitive Product Teardown, Executive Decision Brief, Customer Research Synthesis | $35.10 |
+| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics, Backlog Readiness | $44.46 |
 | Career and interview practice | [Case Practice and Assessment](https://www.agensi.io/bundles/case-practice-and-assessment) | Executive Case Practice Studio, Timed Product Case Coach, Interview & Case Grader | $32.76 |
 
 Each bundle is 35% below the combined individual prices. Check the linked listings for current contents, prices and availability. Individual skills are also available through the creator page.
@@ -18,16 +18,16 @@ Case Practice Studio creates and evaluates practice cases. Interview & Case Grad
 
 The supplied-context workflows were exercised in Codex with fictional evidence. Connected-service execution, other agent products and autonomous coordination across skills have not been independently validated. Paid source and release archives are maintained privately; purchases are delivered through Agensi.
 
-### New workbenches submitted for review
+### Customer research and backlog workbenches
 
-Two additional standalone packages were submitted on October 13, 2026 and are awaiting Agensi review:
+Two additional workbenches are live, available separately and included in their respective product bundles:
 
 | Workbench | What it produces | One-time price (USD) |
 | --- | --- | ---: |
-| Customer Research Synthesis Workbench | Traceable findings, segment comparisons, contradictory evidence and a next research decision from supplied customer notes | $14.40 |
-| Backlog Readiness Workbench | Ticket readiness assessment, relationship map, complete repair drafts and a focused grooming agenda from supplied exports | $14.40 |
+| [Customer Research Synthesis Workbench](https://www.agensi.io/skills/customer-research-synthesis-workbench) | Traceable findings, segment comparisons, contradictory evidence and a next research decision from supplied customer notes | $14.40 |
+| [Backlog Readiness Workbench](https://www.agensi.io/skills/backlog-readiness-workbench) | Ticket readiness assessment, relationship map, complete repair drafts and a focused grooming agenda from supplied exports | $14.40 |
 
-Their fictional supplied-context exercises were completed in Codex. Live services and other agent products were not tested. These packages are not included in the three bundles above. Check the [creator page](https://www.agensi.io/creators/clay-burns) for approval and availability; submission is not a live listing.
+Their fictional supplied-context exercises were completed in Codex. Live services and other agent products were not tested. Customer Research Synthesis is included in Product Discovery and Decisions; Backlog Readiness is included in Product Execution and Measurement. The expanded bundles remain 35% below regular standalone totals: $35.10 versus $54.00 and $44.46 versus $68.40 respectively. Check your existing purchases before buying an overlapping standalone and bundle.
 
 ### Athena analytics companion
 
