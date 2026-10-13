@@ -8,11 +8,11 @@ For complete practice packages, visit [C.J. Burns on Agensi](https://www.agensi.
 
 | Group | Bundle | Included workbenches | One-time price (USD) |
 | --- | --- | --- | ---: |
-| Product management | [Product Discovery and Decisions](https://www.agensi.io/bundles/product-discovery-and-decisions) | Working Backwards PRFAQ, Competitive Product Teardown, Executive Decision Brief | $35.64 |
-| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics | $48.60 |
-| Career and interview practice | [Case Practice and Assessment](https://www.agensi.io/bundles/case-practice-and-assessment) | Executive Case Practice Studio, Timed Product Case Coach, Interview & Case Grader | $45.36 |
+| Product management | [Product Discovery and Decisions](https://www.agensi.io/bundles/product-discovery-and-decisions) | Working Backwards PRFAQ, Competitive Product Teardown, Executive Decision Brief | $25.74 |
+| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics | $35.10 |
+| Career and interview practice | [Case Practice and Assessment](https://www.agensi.io/bundles/case-practice-and-assessment) | Executive Case Practice Studio, Timed Product Case Coach, Interview & Case Grader | $32.76 |
 
-Each bundle is 10% below the combined individual prices. Check the linked listings for current contents, prices and availability. Individual skills are also available through the creator page.
+Each bundle is 35% below the combined individual prices. Check the linked listings for current contents, prices and availability. Individual skills are also available through the creator page.
 
 Case Practice Studio creates and evaluates practice cases. Interview & Case Grader assesses supplied responses and interview turns, records interviewer assistance and distinguishes missing evidence from observed mistakes. Practice scores are diagnostic feedback, not predictions of hiring outcomes.
 
