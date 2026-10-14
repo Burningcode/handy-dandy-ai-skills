@@ -9,10 +9,12 @@ For complete practice packages, visit [C.J. Burns on Agensi](https://www.agensi.
 | Group | Bundle | Included workbenches | One-time price (USD) |
 | --- | --- | --- | ---: |
 | Product management | [Product Discovery and Decisions](https://www.agensi.io/bundles/product-discovery-and-decisions) | Working Backwards PRFAQ, Competitive Product Teardown, Executive Decision Brief, Customer Research Synthesis | $35.10 |
-| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics, Backlog Readiness | $44.46 |
+| Product management | [Product Execution and Measurement](https://www.agensi.io/bundles/product-execution-and-measurement) | Product PRD, Product Outcomes and Metrics, Metric Drop Investigator, AI Agent Product Analytics, Backlog Readiness | $38.42 |
 | Career and interview practice | [Case Practice and Assessment](https://www.agensi.io/bundles/case-practice-and-assessment) | Executive Case Practice Studio, Timed Product Case Coach, Interview & Case Grader | $32.76 |
 
-Each bundle is 35% below the combined individual prices. Check the linked listings for current contents, prices and availability. Individual skills are also available through the creator page.
+Each bundle is approximately 35% below the combined regular individual prices, rounded to cents. Individual sales may change the effective saving. Check the linked listings for current contents, prices and availability. Individual skills are also available through the creator page.
+
+Start with [Product PRD Workbench](https://www.agensi.io/skills/product-prd-workbench) for $1.50, or try [Job Application Workbench](https://www.agensi.io/skills/job-application-workbench) for $14.99. These one-time prices were verified on October 13, 2026. The $1.50 skill is purchased with Agensi credits; buyers without credits may need the platform's $5 minimum top-up. Agent access is separate. Previously purchased skills are not guaranteed to receive credit toward a bundle.
 
 Case Practice Studio creates and evaluates practice cases. Interview & Case Grader assesses supplied responses and interview turns, records interviewer assistance and distinguishes missing evidence from observed mistakes. Practice scores are diagnostic feedback, not predictions of hiring outcomes.
 
@@ -27,7 +29,7 @@ Two additional workbenches are live, available separately and included in their 
 | [Customer Research Synthesis Workbench](https://www.agensi.io/skills/customer-research-synthesis-workbench) | Traceable findings, segment comparisons, contradictory evidence and a next research decision from supplied customer notes | $14.40 |
 | [Backlog Readiness Workbench](https://www.agensi.io/skills/backlog-readiness-workbench) | Ticket readiness assessment, relationship map, complete repair drafts and a focused grooming agenda from supplied exports | $14.40 |
 
-Their fictional supplied-context exercises were completed in Codex. Live services and other agent products were not tested. Customer Research Synthesis is included in Product Discovery and Decisions; Backlog Readiness is included in Product Execution and Measurement. The expanded bundles remain 35% below regular standalone totals: $35.10 versus $54.00 and $44.46 versus $68.40 respectively. Check your existing purchases before buying an overlapping standalone and bundle.
+Their fictional supplied-context exercises were completed in Codex. Live services and other agent products were not tested. Customer Research Synthesis is included in Product Discovery and Decisions; Backlog Readiness is included in Product Execution and Measurement. The expanded bundles remain approximately 35% below regular standalone totals, rounded to cents: $35.10 versus $54.00 and $38.42 versus $59.10 respectively. Check your existing purchases before buying an overlapping standalone and bundle.
 
 ### Athena analytics companion
 
