@@ -4,7 +4,7 @@ A public catalogue of 19 reusable skills for product leadership and operational 
 
 ## Paid workbenches on Agensi
 
-For complete practice packages, visit [C.J. Burns on Agensi](https://www.agensi.io/creators/clay-burns). The paid editions add original fictional exercises, supporting resources and delivery reviews to the workflows. Listings include worked demonstrations so you can inspect the output before buying.
+For complete practice packages, visit [CJ on Agensi](https://www.agensi.io/creators/handy-dandy-ai-skills). The paid editions add original fictional exercises, supporting resources and delivery reviews to the workflows. Listings include worked demonstrations so you can inspect the output before buying.
 
 | Group | Bundle | Included workbenches | One-time price (USD) |
 | --- | --- | --- | ---: |

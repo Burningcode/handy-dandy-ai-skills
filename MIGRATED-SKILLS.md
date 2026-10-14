@@ -11,7 +11,7 @@ On October 13, 2026, these eight source workflows were moved out of the current 
 | `outcome-goal-metric-design` | [product-outcomes-and-metrics-workbench](https://www.agensi.io/skills/product-outcomes-and-metrics-workbench) | Enhanced paid edition with original practice and delivery resources. |
 | `metric-root-cause-investigation` | [metric-drop-investigator](https://www.agensi.io/skills/metric-drop-investigator) | Enhanced paid edition with original practice and delivery resources. |
 | `next-gen-product-analytics` | [ai-agent-product-analytics-workbench](https://www.agensi.io/skills/ai-agent-product-analytics-workbench) | Enhanced paid edition with original practice and delivery resources. |
-| `job-hunt-automation` | [Creator catalogue](https://www.agensi.io/creators/clay-burns) | Design source for Job Application Workbench; check its current listing availability. |
+| `job-hunt-automation` | [Creator catalogue](https://www.agensi.io/creators/handy-dandy-ai-skills) | Design source for Job Application Workbench; check its current listing availability. |
 
 The standalone `prompts/build-a-decision-ready-prd.md` source was also retired. Use the Product PRD Workbench listing for its current paid edition.
 
