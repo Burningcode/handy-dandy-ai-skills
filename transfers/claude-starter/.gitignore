@@ -1,6 +1,0 @@
-workspace-memory/
-private/
-.env
-.env.*
-*.local.md
-

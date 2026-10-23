@@ -1,4 +1,0 @@
-interface:
-  display_name: "Art of Product Strategy"
-  short_description: "Better choices and defensible executive arguments"
-  default_prompt: "Use $art-of-product-strategy to assess this choice, then shape a defensible argument with the strongest alternative and reversal evidence."
