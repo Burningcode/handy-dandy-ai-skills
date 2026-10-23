@@ -17,11 +17,32 @@ The first, second, and fourth are newly written public-safe skills, not exports 
 
 | Skill | Use it for | Watch-out | Download |
 | --- | --- | --- | --- |
+| Art of Product Strategy (`/art-of-product-strategy`) | Strategic choices, investment cases, executive arguments, one-at-a-time rehearsal | Study-derived synthesis, not a verbatim book framework; private study context excluded | [ZIP](packages/art-of-product-strategy.zip) |
 | Product discovery coach | User problem, outcome, assumptions, smallest useful test | Do not polish a preferred solution into evidence | [ZIP](packages/product-discovery-coach.zip) |
 | Market and GTM strategy | Segment, buyer/user, wedge, pricing, channel, launch gates | Requires actual evidence; a market narrative is not a validated forecast | [ZIP](packages/market-and-gtm-strategy.zip) |
 | Product system leverage map | Actors, incentives, flows, constraints, delayed effects | Avoid decorative maps; choose a specific intervention | [ZIP](packages/product-system-leverage-map.zip) |
 | Cross-functional status synthesis | Reconcile delivery, decisions, outcomes, owners, and conflicts | No connector is bundled; supplied evidence works | [ZIP](packages/cross-functional-status-synthesis.zip) |
 | Program update communications | Concise status, blocker, decision request, holding message | Draft only; silence is not approval by default | [ZIP](packages/program-update-communications.zip) |
+
+## Complete paid product workbenches
+
+These are the complete owner-authorized paid releases, including every original supporting resource and fictional exercise. No content was shortened or replaced. Each ZIP's digest and every contained file are checked against its release manifest. The ready-layout Claude Code archive contains the same complete files.
+
+Individual paid ZIP layouts preserve the original release: the first seven below have `SKILL.md` at the archive root; research synthesis and backlog readiness already include a named skill folder. Ensure the final path is `.claude/skills/<skill-name>/SKILL.md`, with no extra nesting. The ready-layout archive already provides the correct folders.
+
+| Skill / Claude Code command | Best use | Included resources | Download |
+| --- | --- | --- | --- |
+| `/product-prd-workbench` | Turn selected product direction into a decision-ready, buildable PRD | PRD template, fictional source packet, practice lab, delivery review | [ZIP](packages/product-prd-workbench.zip) |
+| `/working-backwards-prfaq-workbench` | Test an investment thesis through a future customer experience | PRFAQ template, fictional examples and source packet, practice lab, delivery review | [ZIP](packages/working-backwards-prfaq-workbench.zip) |
+| `/competitive-product-teardown-workbench` | Compare the same customer job, economics, and strategic choices | Teardown canvas, fictional comparison packet, practice lab, delivery review | [ZIP](packages/competitive-product-teardown-workbench.zip) |
+| `/executive-decision-brief-workbench` | Make an investment or portfolio decision explicit | Fictional option/economics packet, practice lab, delivery review | [ZIP](packages/executive-decision-brief-workbench.zip) |
+| `/product-outcomes-and-metrics-workbench` | Define outcomes, metric contracts, targets, and decisions | Metric canvas, fictional cohort packet, practice lab, delivery review | [ZIP](packages/product-outcomes-and-metrics-workbench.zip) |
+| `/metric-drop-investigator` | Diagnose a metric movement and discriminate causes | Two fictional CSV cohorts, context, practice/review guides, optional Python calculator | [ZIP](packages/metric-drop-investigator.zip) |
+| `/ai-agent-product-analytics-workbench` | Connect agent actions to verified state and durable value | Fictional task CSV/context, practice/review guides, optional Python summary helper | [ZIP](packages/ai-agent-product-analytics-workbench.zip) |
+| `/customer-research-synthesis-workbench` | Synthesize supplied research with traceable, bounded findings | Fictional raw notes/request, evidence and decision-review contracts | [ZIP](packages/customer-research-synthesis-workbench.zip) |
+| `/backlog-readiness-workbench` | Review ticket readiness, dependencies, and exact repairs | Fictional backlog/context/request, three review guides, original UI metadata | [ZIP](packages/backlog-readiness-workbench.zip) |
+
+These complement the foundations. Use the executive communication partner for voice and clarity; use the executive brief workbench for the underlying decision. Use the discovery coach to frame learning; use research synthesis to analyze actual supplied notes. Avoid running every overlapping framework on the same task.
 
 ## Other useful public material
 
@@ -42,7 +63,7 @@ These are links, not installed or bundled dependencies.
 
 ## Deliberately not transferred
 
-- Private or paid editions, even if an older version was once public.
+- Paid interview-practice and job-application packages: outside this work-focused starter, rather than reduced versions of the product packages above.
 - Real project histories, assistant memory ledgers, interview packets, employer details, or personal biography.
 - The engineering delivery team's Codex persona configurations and installer: not a Claude drop-in.
 - Production lookup examples, connectors, credentials, and filled configuration: they require separate security, data, and integration decisions.
@@ -51,7 +72,7 @@ These are links, not installed or bundled dependencies.
 
 ## Provenance and compatibility
 
-See [SOURCE-MANIFEST.json](SOURCE-MANIFEST.json) for pinned public revisions, adaptations, file hashes, and package hashes. Existing skill descriptions were shortened for portability. The program-update package also requires an explicitly agreed approval process rather than treating silence as consent.
+See [SOURCE-MANIFEST.json](SOURCE-MANIFEST.json) for pinned public revisions, adaptations, file hashes, package hashes, and paid-release completeness. The six public skill descriptions were shortened for portability; complete paid package descriptions and contents were not modified. The public program-update package also requires an explicitly agreed approval process rather than treating silence as consent.
 
 Methods are portable; connected execution has not been verified in your Claude environment. First use supplied fictional material, then only approved work sources.
 

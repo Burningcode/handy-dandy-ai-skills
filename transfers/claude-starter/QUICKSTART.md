@@ -1,48 +1,81 @@
-# Quick start
+# Claude Code quick start
 
-## First: keep the boundary clear
+Use the approved work account, project, and import process. The pack grants no additional tool access. Do not change managed settings, add connectors, bypass permissions, or install a runtime to make it work without the required approval.
 
-Use only your approved Claude account, workspace, and import process. Ask your administrator if skill upload or code execution is unavailable; do not work around a restriction. This pack needs no network connector or custom executable script.
+## 1. Download and inspect
 
-Start with executive communication, Mary, and product critique. Install other skills when a real task calls for them.
+Download [claude-code-starter.zip](https://github.com/Burningcode/handy-dandy-ai-skills/raw/refs/heads/main/transfers/claude-starter/claude-code-starter.zip). Extract it into a separate staging directory, not over an existing project. It contains:
 
-## Claude browser / Desktop chat
+```text
+claude-code-starter/
+  .claude/skills/<skill-name>/SKILL.md
+  .claude/skills/<skill-name>/<supporting resources>
+  CLAUDE.md
+  .gitignore
+  QUICKSTART.md
+```
 
-1. Open the skill catalog and download the individual ZIPs you want.
-2. In Claude, use **Customize → Skills → Add / Create skill → Upload a skill**, where enabled.
-3. Upload one skill ZIP at a time and enable it.
-4. Add the content of [CLAUDE.md](CLAUDE.md) to the relevant Project instructions, or paste it at the start of a chat if that is your approved route. Merely attaching a file does not establish a permanent instruction.
-5. Try the fictional [practice checks](SMOKE-TESTS.md). Ask which skill was applied; also inspect the visible result.
+There are 19 skills: nine foundations, Art of Product Strategy, and nine complete paid product packages. All paid supporting files are preserved. The two Python helpers are optional local calculators, not installation scripts. No script runs on extraction.
 
-If custom skills are unavailable, use the skill's Markdown as explicit task instructions only if your organization's policy permits it. Do not represent that as an installed skill. See [Claude's upload and organization controls](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+## 2. Merge deliberately
 
-## Claude Code
+- Copy the selected complete skill folders into the approved project's `.claude/skills/`. Start with Mary, executive communication, memory, and the workbench relevant to your immediate task; the rest can be installed now or later.
+- Compare any same-named existing folder before replacing it. Preserve its local changes.
+- Review and merge the supplied [CLAUDE.md](CLAUDE.md) into the project's instruction system. Do not overwrite an existing file or weaken team/managed rules.
+- If the project already relies on `AGENTS.md`, confirm that those instructions remain loaded before introducing another instruction file.
+- Merge relevant ignore entries; do not overwrite the project's `.gitignore`. An ignored folder prevents accidental Git tracking, not unauthorized access or retention.
+- Do not configure a remote pointing back to this public transfer repository from the work project.
 
-1. Extract each selected skill ZIP.
-2. Copy its entire skill folder into the approved project's `.claude/skills/` directory. For example: `.claude/skills/mary-design-partner/SKILL.md`.
-3. Review and merge this pack's [CLAUDE.md](CLAUDE.md) into the project's existing instructions; never overwrite existing or managed rules.
-4. Start a new session and invoke a skill, for example `/mary-design-partner`. Verify the expected behavior with the practice checks.
-5. Use a user-wide installation only if you intentionally want the skill in other projects and policy permits it.
+Project skills live under `.claude/skills/<skill-name>/SKILL.md` and can be invoked as `/skill-name`. Personal skills affect multiple projects, so project-local is the default here. See [Claude Code skill locations](https://code.claude.com/docs/en/skills).
 
-Claude documents [project and personal skill locations](https://code.claude.com/docs/en/skills) separately from [persistent instructions and memory](https://code.claude.com/docs/en/memory). These files guide behavior; they are not security enforcement.
+## 3. Give Claude Code this setup request
 
-## A useful first prompt
+Paste this after extraction in the approved work project:
 
-> Work with me as a product and engineering operating partner. Read the working agreement and use only the skills relevant to this task. First confirm which tools and approved sources you actually have. Keep facts, assumptions, and recommendations distinct. Do not import personal or prior-employer context. Let's start by defining the decision, the user behavior we want to change, and the most important evidence gap. Ask one useful question at a time.
+> Inspect the extracted starter and this project's existing instruction files first. Show any conflicts, duplicate skill names, and proposed changes before modifying existing configuration. Help me merge the complete selected skill folders into this project's .claude/skills and integrate the working agreement without overwriting existing instructions. Preserve team and managed rules, including any AGENTS.md behavior. Do not change permissions, install dependencies, add network integrations, commit, or push. After approved local changes, verify the installed files and tell me which skills are available. Keep all work context in this approved environment.
 
-## Set up continuity after the first useful session
+Review the proposed changes before authorizing the merge. The prompt is not permission to bypass an organizational restriction.
 
-Use **portable-project-memory** to propose a compact handoff. Choose an approved private destination before saving. Keep working style, project facts, and reusable lessons separate; retain source and status. In chat-only mode, ask for a handoff you can review and save yourself.
+## 4. Begin with Mary and one task
 
-This is deliberate written continuity, not model training. Do not assume skills or memory settings transfer between Claude surfaces or accounts; verify the instance you use.
+Start or restart Claude Code from the project root and try:
 
-## A five-minute check
+```text
+/mary-design-partner Review this journey. Give me your strongest concern, a concrete next version, and what still needs real user evidence.
+```
 
-- Can Claude identify the right skill without applying every framework?
-- Does it preserve uncertainty and refuse to invent sources?
-- Does Mary offer a concrete change without claiming user research?
-- Can it summarize a decision without claiming authority to approve it?
-- Does a new session recover the approved handoff, rather than pretending to remember an unseen chat?
+Use [Mary's guide](https://github.com/Burningcode/handy-dandy-ai-skills/blob/main/transfers/claude-starter/MARY-START-HERE.md) for voice calibration. The guide and catalog remain in the public transfer directory rather than inside the installed project; save a permitted local copy before the transfer folder is removed, or retain the full transfer archive.
 
-If any answer is no, narrow the instruction or fix the setup before importing more skills.
+Useful next commands:
+
+- `/executive-communication-partner` for a clear, natural recommendation and ask.
+- `/art-of-product-strategy` for a strategic choice, contradictory evidence, strongest alternative, and defensible argument.
+- `/product-prd-workbench` for a selected direction that needs scope and delivery clarity.
+- `/executive-decision-brief-workbench` for an investment decision and alternatives.
+- `/customer-research-synthesis-workbench` for supplied research.
+- `/metric-drop-investigator` for an unexplained metric movement.
+
+Do not load all skill bodies into the standing instructions. Apply the relevant workflow on demand. The [catalog](https://github.com/Burningcode/handy-dandy-ai-skills/blob/main/transfers/claude-starter/SKILL-CATALOG.md) explains the full selection.
+
+## 5. Establish private continuity
+
+Use `/portable-project-memory` to propose a compact project record after the first useful session. Choose an approved private destination before saving. Keep project facts, decisions, collaboration preferences, and reusable design craft distinct. Retain source, owner, date, status, and what would change a decision.
+
+Review the instance's actual memory behavior with its supported controls; these files do not configure or disable automatic memory. Instructions and saved memory are context, not an enforcement mechanism. See [Claude Code instructions and memory](https://code.claude.com/docs/en/memory).
+
+Do not copy a personal memory directory, earlier conversations, or work-generated content back into the public pack.
+
+## 6. Verify before relying on it
+
+Run a small fictional exercise from a selected workbench, then the relevant [practice checks](https://github.com/Burningcode/handy-dandy-ai-skills/blob/main/transfers/claude-starter/SMOKE-TESTS.md). Check:
+
+- The intended skill and its supporting references are available.
+- Fictional examples remain fictional; no baseline, approval, source, or result is invented.
+- Mary offers a point of view and a concrete change, not just a checklist.
+- The answer sounds conversational while preserving evidence and caveats.
+- A fresh session can recover a saved, approved handoff without claiming unseen history.
+
+Optional Python helpers require an already approved Python environment; they read an explicitly named local CSV and print calculations. Do not install Python or relax execution policy merely to run them. Manual calculations or the agent's approved tools are alternatives.
+
+**Not yet verified:** behavior in the organization's managed Claude Code build. If skills are unavailable or blocked, ask the administrator; do not work around the restriction.
 

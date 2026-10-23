@@ -1,8 +1,8 @@
 # Claude product-partner starter
 
-A small, text-only starter for product judgment, design critique, executive communication, and deliberate memory.
+A Claude Code starter for product judgment, design critique, executive communication, and deliberate memory: nine foundational skills, Art of Product Strategy, and nine complete paid product workbenches, published with the owner's explicit authorization.
 
-**Start here:** [Quick start](QUICKSTART.md) → [working agreement](CLAUDE.md) → [skill catalog](SKILL-CATALOG.md) → [practice checks](SMOKE-TESTS.md).
+**Start here:** [Claude Code quick start](QUICKSTART.md) → [working agreement](CLAUDE.md) → [skill catalog](SKILL-CATALOG.md) → [practice checks](SMOKE-TESTS.md).
 
 **For the closest Mary handoff:** use [Mary's start-here guide](MARY-START-HERE.md), including her fuller voice, design-craft, and private-memory references.
 
@@ -16,21 +16,23 @@ Add **portable project memory** when you have an approved, private place to keep
 
 ## What this is—and is not
 
-- Six adapted packages come from the current public Handy Dandy AI Skills repository. Three lightweight skills and the setup guidance are new public-safe material.
+- Six adapted packages come from the public Handy Dandy AI Skills repository. Three skills and the setup guidance are new public-safe material. Art of Product Strategy preserves the study-derived method and supporting guidance without private study context. Nine additional packages are the complete paid releases, not abridgments or replacements.
 - This is instructions and reusable methods, **not fine-tuning**, a transfer of private memories, or a copy of an existing assistant's hidden state.
-- No employer data, private project facts, career records, personal history, paid workbench content, credentials, connectors, executable installers, or Codex agent configurations are included.
+- No employer data, private project facts, career records, personal history, credentials, connectors, or automatic installers are included. Paid workbenches retain all their templates, fictional exercises, delivery reviews, and supporting files. Two contain optional local Python calculation helpers. Original OpenAI UI metadata in two packages is retained but is not used by Claude Code.
 - The memory templates are empty. Populate them only inside an approved work environment.
 - Your organization's policy and tool permissions still apply. Public availability is not blanket approval to upload internal material, connect services, or install software.
 
 ## Downloads
 
-Use the individual skill ZIPs linked in the [catalog](SKILL-CATALOG.md). Each contains one skill directory and its required references. The [complete transfer archive](claude-product-starter.zip) is for moving the whole pack; **do not upload that archive as one Claude skill**.
+For Claude Code, download the [ready-layout archive](claude-code-starter.zip). It contains all 19 skill folders under `.claude/skills/`, plus the working agreement and setup guide. Extract it separately, then merge only approved files into your work project; do not overwrite existing instructions or same-named skills.
 
-New skill sources are readable under [skills/](skills/). Existing skill sources are linked at their exact public revision in the [source manifest](SOURCE-MANIFEST.json). Their ZIPs contain the adapted text.
+The [catalog](SKILL-CATALOG.md) also links individual ZIPs. Paid ZIPs are byte-for-byte matches to the source release. The [complete transfer archive](claude-product-starter.zip) includes the documentation and both distribution options; do not install it as a single skill.
+
+New skill sources are readable under [skills/](skills/). The [source manifest](SOURCE-MANIFEST.json) records public-source revisions, full paid-release package/file checksums, and Claude Code archive integrity. Private source-repository names and paths are not published.
 
 ## Verification and limits
 
-File structure, local links, package contents, checksums, and the stated publication exclusions were checked before publication. The packages have **not been exercised in your managed Claude instance**. Run the short practice checks before using them for consequential work.
+File structure, local links, archive contents, source-release checksums, and the stated publication exclusions were checked before publication. The two optional helpers were exercised locally with their supplied fictional data. The packages have **not been exercised in your managed Claude Code instance**. Run the short practice checks before consequential work.
 
 No repository-wide license was found in the reviewed public repositories. This transfer does not create a new license or certify organizational/IP clearance; existing notices and public source attribution are retained.
 

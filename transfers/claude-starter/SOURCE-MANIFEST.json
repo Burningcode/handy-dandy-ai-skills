@@ -6,7 +6,7 @@
     "branch": "main",
     "directory": "transfers/claude-starter"
   },
-  "source_revision": "df2503472b7a80a24fd8022fe76a8b103d6d44be",
+  "source_revision": "0030bd5468f934c9de9604677017b013cc71f939",
   "reviewed_public_repositories": [
     {
       "repository": "Burningcode/handy-dandy-ai-skills",
@@ -225,13 +225,371 @@
           "sha256": "a15cdda048aa9ba21a75f233f6ba2f1dbbdf7060cd393713e9385cf863db5bd3"
         }
       ]
+    },
+    {
+      "name": "art-of-product-strategy",
+      "kind": "portable owner-authorized strategy skill",
+      "package": "packages/art-of-product-strategy.zip",
+      "package_sha256": "50faf0fcc1a14fe1bafbfdfc89845c6244b9f5edb19a69a88ec621a32ede7443",
+      "files": [
+        {
+          "path": "art-of-product-strategy/agents/openai.yaml",
+          "sha256": "c53caca396396067636ebbb6e1985fc81cdcf7dd220820535512a98eaf0a2334"
+        },
+        {
+          "path": "art-of-product-strategy/references/argument-and-casework.md",
+          "sha256": "4ff1df325babd14fb34f5362d1be8beaa63535d4c77c44f1d210eb8314ba92f5"
+        },
+        {
+          "path": "art-of-product-strategy/references/source-boundaries.md",
+          "sha256": "cbf8291c8790c1548df7b72f05259c99c0e24573b9d36b5744175453aa91d473"
+        },
+        {
+          "path": "art-of-product-strategy/SKILL.md",
+          "sha256": "94012bd09008642ea18c1cfd1073295ebf60df89b6d46d61f2d0bfce99e779a6"
+        }
+      ],
+      "adaptation": "Core method and argument guidance retained; private study-chat link, local study-file names, workplace-name correction, and personal study-history details removed. Discovery description shortened; personal name generalized. Original UI metadata retained."
+    },
+    {
+      "name": "product-prd-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/product-prd-workbench.zip",
+      "package_sha256": "ed275761b604c3149ceed1930aa7df35f6835fbcbbb78db1bf9d64350cf13f91",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/product-prd-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "88d4014a1403295229b0732033dc0e153da35bfd8d35a51364731d2af33b5217"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "bceba7b3d3dfad0826350f46524d1829d2769c9fd311db36fb99c3204ed67109"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "b4494637b97c07caf1c6ce68f49f859a9b286d8be4f846e8252a6553ad898ca0"
+        },
+        {
+          "path": "references/prd-template.md",
+          "sha256": "bbebc1694da73a93aed88f6f9170068c38402c5d1105f853374f06b814b118e4"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "1013a1aec285037d3e7d6ec21c9404a9953ddc37ace132aa473b23fc6c3bc922"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "working-backwards-prfaq-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/working-backwards-prfaq-workbench.zip",
+      "package_sha256": "8bab57fff33fef27873c358caf55785613f699fda7ebaddcdae6f696c8477210",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/working-backwards-prfaq-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "c6c5363febb5e5d6bd36e9aa6deeaf659a5e8804ce53c564df39398132e1c161"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "28f43ba038e67db35f60bfdc074bd99a19072d439e7d45b8d6c0cd40252bfa89"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "8f3d3c6b10c136a50893d012cc2fb775c24135d2c3af4332342639c60236746d"
+        },
+        {
+          "path": "references/prfaq-template.md",
+          "sha256": "69a2fafa1804fc51c750ef64f4d38c202189155c33523a40114ebb670dc7eb14"
+        },
+        {
+          "path": "references/sanitized-examples.md",
+          "sha256": "81cca48793b0171c7f1f0dad137249aea56c7d5efaf0119922754fd0ffde901f"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "30abe04ffa07d6405e10156ce016cf89639a0955226db72b17e57820ab85af69"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "competitive-product-teardown-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/competitive-product-teardown-workbench.zip",
+      "package_sha256": "0b32b3f19caaa75a79f3aa41ce3e420c57e193cf4dd61ce6fd20bbbc3782f255",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/competitive-product-teardown-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "fe444ace4eb6c05d6a5dadd001e08de8fc169e87f6b042f1ed4d30a0fd5805f7"
+        },
+        {
+          "path": "references/competitive-teardown-canvas.md",
+          "sha256": "491b23e75d353967a795a764357aeb14bef5a782daeb205af3c6e21eabc0b695"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "efcce4a891180ad13e8c7a42f8a42a105b336eccc6b614f1417fcd2d6e7d6577"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "a3bc2f200e397de4bdfe12864ae797a897f187e5c6fb74963f08e9e016655737"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "8de19bab9132ed6d64bca8b84f89c4df3da3249182c94301a2a2c24f64841a23"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "executive-decision-brief-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/executive-decision-brief-workbench.zip",
+      "package_sha256": "e55c0842c51aa48b8d94103645960af0c43709bac86f24798c7916da5dbf59b5",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/executive-decision-brief-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "4a1d1b9722f37572e796fc6faea1cca9e32b9dc9374b44add0447506718e9bc0"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "0fd8ad961e3a6cb4e1b26e452943dbed74f3a30af7f7ca325c88d9f461d48942"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "45125297f67e7021cf63e7249f4930299c134ae769819dc150a16c23ebf84aef"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "e9bdffa054846a680203a1d220922bd3c5ce545cf8cfd0fc29c2ae565fc98371"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "product-outcomes-and-metrics-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/product-outcomes-and-metrics-workbench.zip",
+      "package_sha256": "ce19bd78a693b0b71d8fbd75a46815ebc350c6ea9c6fdc9790492aa3228a7875",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/product-outcomes-and-metrics-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "8b3133318ce17fa5f5cfa37dd153786abdebb9a3d7decd648d4488141ed17d41"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "7fe2cde62c433e88ee73877cb662cb266fd2eabbc28bf08b349bcbf69264d9ca"
+        },
+        {
+          "path": "references/outcome-metric-decision-canvas.md",
+          "sha256": "f5802942c8510b2f479a71a3873c65c0aa36d90581195aff2118e12243d1dab8"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "e62416426c653c38ae422eb0b7e4e1f3924b1c22030e18ffa3d999dc7bf3100a"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "5965134ed7486090302bac52b848f18b09319c69a45d5726314d28de3f23f4e6"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "metric-drop-investigator",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/metric-drop-investigator.zip",
+      "package_sha256": "c25995d173e3d9c78a3246cfebf3e1956880960ca329bcb7b17a60141cf137fe",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/metric-drop-investigator",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/metric-windows.csv",
+          "sha256": "c677b19e8e5628618284ec1b31c85806c481544294cc13b4ab0167a53a5e44d4"
+        },
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "e27e99b77c5b6aea969bff9b5a36aae5296cf0fbfb20b15b2c69d8fbfea3efa3"
+        },
+        {
+          "path": "fixtures/within-segment-decline.csv",
+          "sha256": "dd77e1178b86b1a7fd401c36474c496f463cf62b01f64cd9401e96ee18f4076c"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "1cc46ddfd91245ceded63c6c326866f1223fa3a17272ba1f1b5aa106d3de6825"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "f58572c0e2eab30271111690601d8355060e53d842535ef795ad7e99d911eea5"
+        },
+        {
+          "path": "scripts/calculate_rates.py",
+          "sha256": "e4988422bdfb9771f65203db7e80b0c5527417b65458562aa1f1e6e0f5ddfa47"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "e9e0d43d823f81f1f0287bbcd88d2f0d1f53cdb11aae3b05dab093ad13a1abe3"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "ai-agent-product-analytics-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/ai-agent-product-analytics-workbench.zip",
+      "package_sha256": "acf7396cf7825cf6233b3c4ec8b9c5c5d0b3dd6b05451acd090c6712b0548629",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/ai-agent-product-analytics-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "fixtures/agent-tasks.csv",
+          "sha256": "760fb5696129ff80676430b4b2bcff05cac27886b9180b28dda81ee8666a7764"
+        },
+        {
+          "path": "fixtures/source-packet.md",
+          "sha256": "b235baf29594e9f5df2133621dbb92fb2c7ae930b508a86cc9a455fb5024efa1"
+        },
+        {
+          "path": "references/delivery-review.md",
+          "sha256": "97173c5b7e04f5b335f13e88abcfb485da0f8ec0e3f1369e932de4fcdbacf438"
+        },
+        {
+          "path": "references/practice-lab.md",
+          "sha256": "0985387817306e84a42a109fe569ef2a6af4bad62e68ba1d95d2f6400d182b24"
+        },
+        {
+          "path": "scripts/summarize_tasks.py",
+          "sha256": "e07623e653d452d6fd7a3cd199d4dacf95b2899ffad11169df8cff54b8e1b453"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "e9a2688c1f6c36c57334908cba1190623413777f3f86da0f70b4844f87c58fe6"
+        }
+      ],
+      "archive_layout": "SKILL.md at archive root; extract inside a named skill folder",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "customer-research-synthesis-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/customer-research-synthesis-workbench.zip",
+      "package_sha256": "9ab4ddbd4796ea3eb20c6176c027cb8c0c4bab17d31074756488961f384fd74a",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/customer-research-synthesis-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "practice/relaydesk/buyer-request.md",
+          "sha256": "5741c0dcfdf6a276050b2f769af9f15730453c08166f8ef3aa8b0d6b8bb4c95e"
+        },
+        {
+          "path": "practice/relaydesk/raw-notes.md",
+          "sha256": "28acd9d02ac690f38f6e35c6c36d210cdbc2f29302e93e4a81b0ef3db4854601"
+        },
+        {
+          "path": "references/decision-review.md",
+          "sha256": "8eb0aa383646e88167bcf9fc2b34baf978eb0337347dfcc796af025767fe9f61"
+        },
+        {
+          "path": "references/evidence-contract.md",
+          "sha256": "73f1c278532ced0af6ef24b0224c7e5a1ab42abb15c6603de38880d1ff2cab35"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "f5a485e9e0bf6710c840191630d1bc1ac74b7807a714879d30972b90e06642e4"
+        }
+      ],
+      "archive_layout": "named skill folder at archive root",
+      "omitted_files": [],
+      "content_modifications": []
+    },
+    {
+      "name": "backlog-readiness-workbench",
+      "kind": "complete owner-authorized paid release; unchanged",
+      "package": "packages/backlog-readiness-workbench.zip",
+      "package_sha256": "41f26c0e51dd6041857aaf4ecb62809575a73dbfbb2aa1134029defc9844b8ab",
+      "release_date": "2026-10-13",
+      "listing_url": "https://www.agensi.io/skills/backlog-readiness-workbench",
+      "source_revision": "384b40901d044161a2e66ca60d606b38ae379808",
+      "files": [
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "5b09474d5999fc821213dee126dde0e3134e185bb8960efd578faf5f766e0760"
+        },
+        {
+          "path": "fixtures/buyer-request.md",
+          "sha256": "577595450a5635e2dd8c69141373be38ae584f791d5144491f9cd7b6ecbdd5c4"
+        },
+        {
+          "path": "fixtures/context.md",
+          "sha256": "23c75d4366f8b4db1e4fed249df8d861ff8350fad1b24cf78628302f196d562e"
+        },
+        {
+          "path": "fixtures/tickets.csv",
+          "sha256": "3ce8a91013d3d7457dd56afecb4225f08f174f61e6cc58ca83e1e3a44f30b895"
+        },
+        {
+          "path": "references/readiness-and-evidence.md",
+          "sha256": "47f9e7dd7479e3621b5cacd5f39b82601fd48e689a596ccd7c49ae068ddcf079"
+        },
+        {
+          "path": "references/relationships.md",
+          "sha256": "dc7f9a7bf4a6ee06c17bd0cc84ef0991d6138f99b18ca01e8556b5c84245dc3a"
+        },
+        {
+          "path": "references/repair-and-session.md",
+          "sha256": "e57af77d4c6fd548f11bd872c7c2b9bcfb0784d9b766b19362644dc13739924a"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "2ac3a43d014f60fa55dcdbed79419b4980143c6f716fe8d8515b5ac80bb4a195"
+        }
+      ],
+      "archive_layout": "named skill folder at archive root",
+      "omitted_files": [],
+      "content_modifications": []
     }
   ],
   "constraints": {
     "private_memories_included": false,
     "employer_context_included": false,
-    "paid_editions_included": false,
-    "executables_in_skill_packages": false,
+    "paid_editions_included": true,
+    "complete_paid_packages": 9,
+    "optional_local_calculation_scripts": 2,
+    "automatic_installer_included": false,
+    "private_source_repository_details_included": false,
     "managed_claude_runtime_tested": false,
     "new_license_granted": false,
     "deletion_removes_history": false
@@ -242,9 +600,7 @@
     "behavioral_checks": "destination prompts provided; not executed in managed Claude",
     "official_setup_references": [
       "https://code.claude.com/docs/en/skills",
-      "https://code.claude.com/docs/en/memory",
-      "https://support.claude.com/en/articles/12512180-use-skills-in-claude",
-      "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
+      "https://code.claude.com/docs/en/memory"
     ]
   },
   "document_hashes": [
@@ -254,19 +610,31 @@
     },
     {
       "path": "MARY-START-HERE.md",
-      "sha256": "f5136604ce532807d60a7cb80789b462692c5a70dbeab3b16f94f43d6593cb4a"
+      "sha256": "abf454c8a901ebb3aa93aefbff5a0942b745a1e5f7e161c68fa5df0eefbb6913"
     },
     {
       "path": "QUICKSTART.md",
-      "sha256": "a33cdf34352b1eecbcf37dc08202016128101a13d9ba9c82183747c82be96360"
+      "sha256": "11fb54498c5babecc7a61dee2c58efdcd5676b92fde69123f0737e88795f55bc"
     },
     {
       "path": "README.md",
-      "sha256": "8fe0ef733677fc38228eceb0b4463547b6d75ff1b9d39e067f349452bbaba8b2"
+      "sha256": "d6f50aeeaddedce16a03b59f26269132df9158191d131122cf08494a59899bdf"
     },
     {
       "path": "SKILL-CATALOG.md",
-      "sha256": "918856a4df08cecd1e9e317acd24276fc3be04f3b3d5d72ffc7ca0c6011f1afd"
+      "sha256": "d08ca344bec1e5c805f0d32fd0d9f8350fa3cc8a16fc9de8f42f1f0856204bc8"
+    },
+    {
+      "path": "skills/art-of-product-strategy/references/argument-and-casework.md",
+      "sha256": "4ff1df325babd14fb34f5362d1be8beaa63535d4c77c44f1d210eb8314ba92f5"
+    },
+    {
+      "path": "skills/art-of-product-strategy/references/source-boundaries.md",
+      "sha256": "cbf8291c8790c1548df7b72f05259c99c0e24573b9d36b5744175453aa91d473"
+    },
+    {
+      "path": "skills/art-of-product-strategy/SKILL.md",
+      "sha256": "94012bd09008642ea18c1cfd1073295ebf60df89b6d46d61f2d0bfce99e779a6"
     },
     {
       "path": "skills/executive-communication-partner/references/executive-communication.md",
@@ -306,7 +674,17 @@
     },
     {
       "path": "SMOKE-TESTS.md",
-      "sha256": "64c3a48785b6ead02ccfbad727d1314d976440b373c8c0e0a65dfc1203fa1b00"
+      "sha256": "61752101d8d994e4c2480c73ae56dced1a2cdfa2c1c7a568e7d9e275360853a4"
     }
-  ]
+  ],
+  "target": "Claude Code",
+  "claude_code_archive": {
+    "path": "claude-code-starter.zip",
+    "sha256": "576f71de035bada7e4c5e803ff4c99dc2941dfad5050551bea260c97cb7b8bb9",
+    "skills": 19,
+    "files": 76,
+    "layout": "claude-code-starter/.claude/skills/<skill-name>/SKILL.md",
+    "paid_skill_file_integrity": "all files match the complete paid release archives",
+    "instruction_merge_required": true
+  }
 }

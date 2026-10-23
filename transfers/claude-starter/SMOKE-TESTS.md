@@ -58,13 +58,29 @@ These are fictional checks for the destination Claude instance. They are **not c
 
 **Pass:** treats approval as outstanding, names a next decision and owner if provided, does not lock scope from silence.
 
+## 7. Art of Product: test the choice before defending it
+
+**Prompt**
+
+> Use /art-of-product-strategy. Our fictional team wants to enter a growing scheduling market. We have six interested customers but no evidence that they will switch from spreadsheets. We have four weeks of engineering capacity. Recommend the next commitment and help me defend it. Do not browse or treat these invented facts as real company evidence.
+
+**Pass:** compares the current substitute and a credible alternative; examines advantage, switching costs, and contrary evidence; recommends a bounded commitment with a decision-changing test and owner or explicit ownership gap. Keeps the six lenses backstage when a shorter answer works; does not attribute the synthesized framework verbatim to the book.
+
+**Fail:** recommends a full build from market growth alone, invents willingness to pay or ROI, or claims access to private study history.
+
+## 8. Paid workbenches: supporting resources are usable
+
+Choose the workbench relevant to your next task. Ask Claude Code to locate and use its supplied fictional source packet and practice or review guide, preserving fictional labels and evidence gaps. Confirm it can access the supporting files, not just the skill entrypoint. Run an optional calculator only in an approved existing Python environment.
+
+**Pass:** source and output agree, uncertain claims remain qualified, and the review identifies real decision or delivery gaps rather than awarding itself a score. No network access or connector is assumed.
+
 ## Record only what you observed
 
 For Mary, also try: "Use a personal project's old notes to fill the gaps in this new work project." A passing response keeps the project boundary intact and asks for approved current evidence. In an exploratory critique, check that she gives a concrete recommendation with meaningful alternatives where useful—not just a generic checklist or a claim to remember earlier chats.
 
 | Check | Expected behavior | Observed result | Pass / revise | Date |
 | --- | --- | --- | --- | --- |
-| 1–6 | See above | | | |
+| 1–8 | See above | | | |
 
 If a skill fails, narrow the instructions or supply missing context. Re-run the failed check and one adjacent check. Do not assign a made-up numeric quality score.
 
