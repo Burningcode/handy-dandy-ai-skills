@@ -91,7 +91,7 @@ Then reload the application.
 - Do not add a repository-root `SKILL.md`; the Skills CLI must discover the individual folders.
 - Run `node scripts/validate-skills.mjs` before pushing. GitHub Actions runs the same validation on pushes and pull requests.
 
-The `engineering-delivery-team` skill also includes six Codex persona configurations and a PowerShell installer. Install the complete team into a project with:
+The `engineering-delivery-team` skill provides portable role briefs, optional design/copy and data/evidence review, and prototype journey verification. It also preserves six optional Codex persona configurations and the existing PowerShell installer. Install the skill and those persona files into a project with:
 
 ```powershell
 .\skills\engineering-delivery-team\scripts\Install-EngineeringDeliveryTeam.ps1 -TargetProject 'C:\work\your-project'
@@ -99,11 +99,20 @@ The `engineering-delivery-team` skill also includes six Codex persona configurat
 
 Use `-Personal` instead to install under `CODEX_HOME`, or under `~/.codex` when `CODEX_HOME` is unset.
 
+For a skill-only installation with Python 3.10 or newer:
+
+```bash
+python skills/engineering-delivery-team/scripts/install.py --project /path/to/project --dry-run
+python skills/engineering-delivery-team/scripts/install.py --project /path/to/project
+```
+
+The Python installer preserves different existing installations and treats an identical copy as a no-op. See [installation and compatibility](skills/engineering-delivery-team/references/portability.md) for the two install modes, and [verification results](skills/engineering-delivery-team/references/release-verification.md) for tested behavior and limits.
+
 ## Included skills
 
 | Skill | Category | What it demonstrates |
 | --- | --- | --- |
-| [`engineering-delivery-team`](skills/engineering-delivery-team/SKILL.md) | Engineering delivery | Risk-sizes work across a Coordinator, read-only Explorer, Staff Engineer, SRE, Senior Tester, and post-finalization Code Documenter using versioned task packets, exclusive file ownership, compatibility/resource contracts, and independent evidence gates. |
+| [`engineering-delivery-team`](skills/engineering-delivery-team/SKILL.md) | Engineering delivery | Coordinates the smallest useful team through exclusive ownership, bounded reviews, design/copy and data checks, complete-journey verification, model/budget constraints, and evidence-backed delivery. |
 | [`probe-product-analysis`](skills/probe-product-analysis/SKILL.md) | Product analysis | Applies Purpose, Reality, Obstacles, Bets, and Experiments as an evidence-backed loop, producing both a decision analysis and a one-page decision canvas. |
 | [`user-problem-outcome-journey`](skills/user-problem-outcome-journey/SKILL.md) | Experience strategy | Connects an evidence-backed user problem to as-is and to-be journeys, outcome intent, opportunities, end-to-end user stories, release slices, and a decision canvas. |
 | [`product-system-leverage-map`](skills/product-system-leverage-map/SKILL.md) | Systems strategy | Maps actors, exchanges, internal health, constraints, delays, and feedback loops to identify a small, testable system leverage point. |

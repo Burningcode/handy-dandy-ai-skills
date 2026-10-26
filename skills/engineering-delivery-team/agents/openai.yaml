@@ -1,7 +1,6 @@
 interface:
   display_name: "Engineering Delivery Team"
-  short_description: "Risk-size delivery across six engineering roles"
-  default_prompt: "Use $engineering-delivery-team to classify this change, preserve its interface contract, coordinate versioned task packets with exclusive file ownership, document finalized code concisely, and return an evidence-backed delivery status."
-
+  short_description: "Scoped prototype delivery with independent verification"
+  default_prompt: "Use $engineering-delivery-team to scope this change, assign the smallest useful team, implement it with clear ownership, and verify the complete user journey."
 policy:
   allow_implicit_invocation: true

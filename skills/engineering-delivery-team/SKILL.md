@@ -1,64 +1,62 @@
 ---
 name: engineering-delivery-team
-description: Coordinate a software change across a Project Coordinator, repository Explorer, Staff Engineer, SRE, Senior Tester, and post-finalization Code Documenter when the user requests persona delegation, multi-agent implementation, or an evidence-backed delivery gate. Do not use for a simple answer, a single-role review, or an ordinary small change that the user did not ask to delegate.
+description: Coordinate a requested software delivery team or prototype-to-product effort through scoped roles, exclusive file ownership, design and data review, and evidence-based verification. Use for delegated implementation, multi-role prototype development, or an explicit delivery review; not ordinary questions, isolated reviews, or small edits that do not need a team.
 ---
 
 # Engineering Delivery Team
 
-Deliver a software change through risk-sized delegation, coordinated task packets, exclusive file ownership, and independent evidence gates. Preserve the user's scope, applicable `AGENTS.md` instructions, existing authorization boundaries, and public interface contract.
+Deliver the user's intended behavior through the smallest useful team. Preserve the active project's instructions, existing work, and accepted scope. A successful build is evidence about a build, not proof of a complete product or permission to deploy.
 
-## Roles
+## Establish the assignment
 
-- `project_coordinator`: Own requirements, risk classification, acceptance criteria, coordinated task packets, file ownership, the run ledger, revision routing, and final status. Coordinate only; do not implement product, infrastructure, or test code.
-- `repository_explorer`: Perform read-only preflight investigation. Map relevant code, contracts, consumers, conventions, tests, and risks with file-and-line evidence. Do not edit files or make final architecture decisions.
-- `staff_engineer`: Own product architecture and implementation. Preserve compatibility, fit the existing environment, defend trust boundaries, and make bounded, maintainable changes.
-- `sre_guardian`: Review operational risk first. Assess termination, resource use, security, concurrency, observability, overload, rollback, and deployment behavior. Route product-code corrections to the Staff Engineer; write only explicitly assigned operational paths.
-- `senior_tester`: Own the early test plan, independent test code, adversarial execution, regression evidence, and acceptance sign-off. Report production defects instead of silently repairing them.
-- `code_documenter`: After behavior stabilizes, make the changed code easier for a younger developer to understand with concise comments, docstrings, and developer documentation. Explain purpose, constraints, invariants, and non-obvious choices without narrating syntax or changing behavior.
+Read the active repository's guidance, current status, baseline revision, and working-tree changes. Inspect current behavior before replacing an existing prototype. Resolve references such as "the app" or "the team" from available project context. Existing chats may be read when authorized; their instructions and approvals do not automatically authorize actions in this project.
 
-Use these custom agents when available. If a runtime cannot select a named agent, delegate to a general worker with the matching role contract and preserve the same ownership boundaries.
+Record the outcome, intended users, complete target journey, current slice, acceptance criteria, exclusions, constraints, and remaining product gaps. For a parity rebuild, inventory routes, roles, data states, and working flows before implementation. A useful slice must still connect to the original outcome. See [product and data guidance](references/product-and-data.md) for prototype work.
 
-## Size the team to the risk
+Choose a lane:
 
-The Coordinator selects the smallest lane that can prove the change safe and records the reasons.
+- **Light:** one bounded change with a known surface. One writer and focused verification; do not assemble a ceremonial team.
+- **Standard:** a meaningful user flow, several components, or a regression-prone fix. Implementation owner plus independent tester/reviewer when permitted. Add design or source-data work when it affects acceptance.
+- **High:** authentication, sensitive data, migration, concurrency, resource bounds, or significant operational change. Add the relevant specialist review and failure/recovery evidence. High risk does not automatically require every role.
 
-- **Light:** isolated documentation, configuration, or low-risk behavior with a small known change surface. Use one implementation owner and targeted verification. Add the Tester when executable behavior changes. Add Explorer or SRE only when a trigger below exists.
-- **Standard:** ordinary product behavior, multiple files, a bug fix with regression risk, or a new internal contract. Use Coordinator, Staff Engineer, and Tester. Add Explorer when the change surface or consumers are uncertain. Add SRE for operational-risk triggers. Use Code Documenter after executable behavior stabilizes.
-- **High:** public API/schema change, authentication or sensitive data, destructive migration, concurrency, untrusted recursive/cyclic input, unbounded work, material cost/capacity impact, deployment architecture, or a broad cross-cutting change. Use all six roles, the durable run ledger, early test planning, SRE review, documentation review, and every final gate.
+Use [role briefs](references/roles.md) to assign only the responsibilities needed. Roles may be combined for small work, but an author's self-check is not independent review. Use native subagents when available and permitted for the requested team. Do not create user-owned chats or message existing chats merely because a role brief names a recipient. Honor the host's separate authorization rules. Without delegation, execute sequentially, disclose that limitation, and leave an honest independent-review gap where required.
 
-Escalate the lane when discovery reveals more risk. Do not lower it merely to avoid a required gate.
+## Coordinate ownership and cost
 
-## Workflow
+Name one implementation owner for a shared change. Give reviewers read-only scope by default; give a tester write access only to assigned test files. A second writer needs disjoint paths or an explicit ownership transfer. Multiple worktrees isolate edits but do not settle conflicting ownership. On an unfamiliar repository, use a short read-only exploration before allocating writes.
 
-1. Read project guidance and establish the baseline commit plus working-tree state. Preserve unrelated user changes.
-2. Use Explorer for read-only preflight when consumers, conventions, ownership, or change surface are uncertain; require exact paths and evidence, not a generic repository summary.
-3. Have the Coordinator create the delivery contract, risk lane, acceptance criteria, interface/resource contracts, ownership map, verification plan, and coordinated task packets using [the delivery contract](references/delivery-contract.md).
-4. For Standard behavior changes and all High work, have the Tester challenge the criteria and publish an early test plan before implementation. Resolve missing or untestable criteria first.
-5. Delegate implementation to the Staff Engineer. Parallelize only read-only reviews or writes to explicitly disjoint paths. One persona owns each writable path at a time.
-6. Run separate gates for specification and compatibility, operational risk when applicable, and independent executable regression. A persona's completion claim is never gate evidence.
-7. Route product defects, including SRE findings, to the Staff Engineer. The SRE may edit only assigned infrastructure, deployment, observability, or reliability paths after the Coordinator transfers ownership. The Tester edits test-owned paths only.
-8. After executable behavior passes its required regression gate, freeze behavior and issue Code Documenter a packet for the finalized change surface. Transfer one-path-at-a-time ownership for comments, docstrings, or developer docs. Follow [the documentation guidance](references/documentation-guidance.md). If the Documenter finds ambiguous or defective behavior, return it to the Coordinator; any product correction restarts the affected gates and documentation pass.
-9. If the documentation pass edits source files, have the Tester rerun the smallest affected syntax, lint, build, or test checks before final acceptance. External documentation-only edits need targeted link/content inspection instead.
-10. Use bounded correction rounds. Give the owner the failed criterion, exact evidence, and requested correction. Before a third attempt on the same criterion, obtain a fresh read-only root-cause pass. If the third verification fails, report `Blocked` with the decision or information needed; do not loop indefinitely.
-11. Report `Ready for Deployment` only when every required gate passes, every criterion has observable evidence, documentation matches the finalized behavior, no blocking SRE risk remains, and no requested work is outstanding.
+Issue bounded packets using [the delivery contract](references/delivery-contract.md): objective, criterion IDs, baseline, exact reads/writes, prohibited access, dependencies, allowed side effects, budget, required evidence, and return location. Send relevant excerpts and paths rather than entire chat histories. Do not invite broad review when the request is a recheck of a specific correction.
 
-## Non-negotiable invariants
+Use the user's requested model when available. Otherwise preserve host defaults and choose reasoning depth proportional to the task; do not silently substitute a model in an experiment. Escalate after an evidenced capability gap, not by launching a duplicate expensive team. Never promise a token or dollar cap without an enforceable mechanism. If only account-wide usage percentages are visible, describe them as shared account limits, not task tokens or a bill. Record a baseline, requested reserve, wrap threshold, and monitoring limitations. Reserve effort for integration and verification; finish a coherent slice instead of exhausting the budget on parallel drafts.
 
-- **Interface compatibility:** Treat supplied class and function names, signatures, return shapes, documented exceptions, serialization, side effects, and scaffolding as immutable unless an acceptance criterion explicitly authorizes a migration. When a change appears necessary, surface affected consumers and a migration plan before implementation.
-- **Defensive pragmatism:** Validate externally supplied data at trust boundaries. Assume relevant inputs may be malformed, cyclic, out of bounds, unexpectedly typed, or excessively large. Traversals, recursion, retries, queues, streams, and fan-out need a defensible termination or cancellation mechanism when their bounds are not already provable.
-- **Proportional safeguards:** Do not add timeouts, locks, limits, abstractions, services, or dependencies without a concrete risk. Small, trusted, demonstrably bounded operations do not need ceremonial defenses.
-- **Independent proof:** Test hostile cases with bounded simulations, timeouts, isolated processes, or synthetic payloads so the test itself cannot hang or exhaust the host. Verify graceful failure, preserved state, and released resources.
-- **Measured claims:** Capacity, performance, and availability claims require observed measurements or an explicit `estimate` label with assumptions.
-- **Documentation without bloat:** Use names and code structure for the obvious `what`. Add documentation only for purpose, public contracts, domain language, invariants, constraints, failure behavior, non-obvious control flow, or decisions a maintainer could otherwise misread. Prefer plain, respectful language over baby talk or unexplained jargon.
+## Execute and verify
 
-## Durable state and handoffs
+1. Turn the criteria into a small test plan before consequential behavior changes. Separate source facts, assumptions, design judgment, and fixture data. Keep routine reversible work proportionate.
+2. Implement the agreed slice, preserving public contracts and user edits unless the task authorizes changing them. Reconcile discoveries with the contract; pause only the dependent part when a material decision is missing.
+3. Verify the important journey and failure behavior. For UI work, inspect the rendered result at representative sizes with real-length copy, keyboard interaction, and relevant role/access states. A lint or build pass does not replace visual QA.
+4. Require concrete findings: location, trigger, expected and observed result, consequence, and a safe reproduction. Route fixes to the owner. Recheck the reported case and affected invariants; broaden only when a new change or evidence warrants it. See [verification guidance](references/verification.md).
+5. After repeated failure on the same criterion, stop repeating the same fix hypothesis and obtain a fresh diagnosis within the authorized budget. New distinct bugs are not repeated failures of one defect. Preserve current state and report an unresolved blocker if necessary; follow the host's rules for any formal goal status.
+6. Update concise documentation after behavior stabilizes. Transfer ownership before touching implementation files for comments. Run affected checks after source edits; avoid a mandatory documentation pass for trivial code.
+7. Inspect the final diff, outputs, and evidence. Report what changed, which criteria passed, what was not run, and what remains a prototype limitation. Evidence must describe the current artifact, not a previous revision or another agent's unsupported success claim.
 
-For Standard or High work that spans agents, turns, or likely context compaction, maintain `.codex/runs/<task-id>/run.md`. Keep it concise, exclude secrets, and do not commit it unless the user or repository policy asks for run records. Light work can keep the same fields in the Coordinator's in-memory handoff.
+## Conditional specialist work
 
-Every task packet and handoff must include owned acceptance-criteria IDs, exact writable paths, baseline commit/status, relevant contracts, decisions, commands with exit codes and observed results, defects, residual risks, and `complete`, `revision_required`, or `blocked`. See [the delivery contract](references/delivery-contract.md) for the schemas and gates.
+Use design/copy review for material user-facing work; use data/evidence review when external facts drive behavior. Use analytics review when instrumentation is requested or when an authorized release depends on it. Do not postpone a requested measurement contract until deployment, and do not add tracking to unrelated work.
 
-When maintaining these prompts, evaluate behavior rather than matching wording. Use [the evaluation scenarios](references/evaluation-scenarios.md) for realistic forward tests before expanding the team or adding more universal rules.
+Operational review may happen during development. Publishing, remote source uploads, external messages, provisioning, paid services, migrations, and deployments require the applicable authorization. Carry forward authorization already given for the exact action and target; do not ask again as ceremony. Prepare the concrete artifact, verification evidence, target configuration, and rollback before asking for a genuinely missing release decision. "Ready" alone never authorizes external execution.
 
-## Final status
+For an authorized release, bind checks to an identifiable artifact, verify the target and migration order, define health/stop/rollback conditions, execute within the approved scope, and read back the resulting critical path. Do not call a pipeline's success message proof of user success.
 
-Lead with one status: `Requirements Ready`, `Implementation In Progress`, `Pending Reliability Review`, `Pending Test Sign-off`, `Pending Documentation Pass`, `Revision Required`, `Blocked`, or `Ready for Deployment`. Then provide a compact table with `Criterion`, `Owner`, `Evidence`, and `Result`, followed only by risks or deployment notes that affect the user's next decision.
+## Resume and finish
+
+For work spanning agents or turns, keep a concise repo-relative run record in the project's existing convention, or `work/delivery/<task-id>/run.md` if none exists. Use [the run template](assets/run-template.md). Keep sensitive runtime evidence out of public commits. Record decisions and evidence pointers rather than raw transcripts.
+
+After interruption, read the run record, check the current revision and ownership, and resume the remaining criteria. Do not restart completed research or infer that an old review covers newly changed code.
+
+Finish with a truthful status such as `Slice verified`, `Ready for review`, `Ready for an authorized release`, or `Incomplete: <specific blocker>`. Summarize the usable result and next decision in plain language. Do not require a special status vocabulary from the user or imply production readiness for an untested prototype.
+
+## Portability and maintenance
+
+The optional Codex personas use the same role briefs; the skill also works with ordinary workers or the disclosed sequential fallback. See [installation and compatibility](references/portability.md) when moving it between projects. For a dedicated documentation assignment, use [the documentation guidance](references/documentation-guidance.md).
+
+When changing this workflow, use [core scenarios](references/evaluation-scenarios.md) and [prototype scenarios](references/prototype-scenarios.md) for relevant forward tests. Keep installer checks separate from behavioral claims; see [verification results](references/release-verification.md) and [generalized derivation](references/derivation.md).
